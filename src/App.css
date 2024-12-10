@@ -1,0 +1,188 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Verdana, sans-serif;
+	text-decoration: none;
+	list-style: none;
+}
+
+.App {
+	display: grid;
+	grid-template-columns: 350px 1fr;
+	grid-template-rows: auto;
+	grid-template-areas:
+		'sidebar background'
+		'sidebar projects'
+		'sidebar skills'
+		'sidebar footer';
+}
+
+/* Sidebar */
+
+.sidebar {
+	/* With the `position: sticky`, we need to tell it where to stick it to. */
+	top: 0;
+	left: 0;
+	position: sticky;
+	align-self: start;
+	min-height: 100vh;
+	grid-area: sidebar;
+	background: rgb(49, 36, 79);
+	/* padding-left: 50px; */
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+/* .sidebar ul {
+
+} */
+
+.profile-pic {
+	width: 128px;
+	height: 128px;
+	border-radius: 50%;
+	margin: 15px auto;
+	background-color: red;
+	background-image: linear-gradient(to right, #6342a5, #b74d92);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.profile-image {
+	border-radius: 50%;
+	height: 122px;
+	width: 122px;
+}
+
+.sidebar h1 {
+	color: #fff;
+	text-align: center;
+	margin: 55px 10px;
+	font-size: 32px;
+}
+
+.sidebar ul li {
+	margin: 40px;
+}
+
+.sidebar ul li a {
+	position: relative;
+	border-bottom: 1.5px solid rgba(128, 128, 128, 0.342);
+	display: flex;
+	justify-content: flex-end;
+	width: 100%;
+	font-weight: bold;
+	font-size: 10px;
+	color: grey;
+	text-transform: uppercase;
+	letter-spacing: 0.2rem;
+	padding-bottom: 12px;
+	transition: all 0.45s ease-in-out;
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a:focus {
+	color: rgb(171, 171, 171);
+}
+
+.sidebar ul li a::before {
+	content: '';
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 1.5px;
+	background-color: rgba(128, 128, 128, 0.342);
+
+	/* hide this */
+	transform: scaleX(0);
+	transform-origin: right;
+	transition: all 0.45s ease-in-out;
+}
+
+.sidebar ul li a:hover::before {
+	transform: scaleX(1);
+	background-image: linear-gradient(to right, #5e42a5, #b74d92);
+}
+
+/* .sidebar ul li a:active,
+.sidebar ul li a:l {
+	color: #fff;
+	border-image-slice: 1;
+	border-image-source: linear-gradient(to right, #6342a5, #b74d92);
+} */
+
+/* Background */
+
+#background {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	padding-left: 50px;
+	padding-right: 50px;
+	gap: 20px;
+	grid-area: background;
+	color: #b7a9d7;
+	background-color: #5e42a5;
+	font-size: 20px;
+}
+
+#background h2,
+#projects h2,
+#skills h2,
+#footer h2 {
+	color: #fff;
+}
+
+#background p {
+	line-height: 1.1em;
+}
+
+.contact-me {
+	margin-top: 15px;
+	margin-bottom: 15px;
+}
+
+.contact-me a {
+	padding: 7px 12px;
+	border: 2px solid #fff;
+	border-radius: 17px;
+	color: #fff;
+}
+
+.contact-me a:hover,
+.contact-me a:focus {
+	background-color: #b7a9d7;
+}
+
+/* Projects */
+
+#projects {
+	grid-area: projects;
+	background-color: #4f52b5;
+}
+
+/* Skills */
+
+#skills {
+	grid-area: skills;
+	background-color: #b74d91;
+}
+
+/* Footer */
+
+#footer {
+	grid-area: footer;
+	background-color: #ffc0cb;
+}
+
+#background,
+#projects,
+#skills,
+#footer {
+	height: 100vh;
+}
