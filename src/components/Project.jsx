@@ -12,7 +12,9 @@ function Project({ project }) {
 				<h3>{project.title}</h3>
 				<p>{project.description}</p>
 				<div className='contact-me'>
-					<a href='#'>Live Site</a>
+					<a href='https://github.com/MichaelKleemoff/accelerator1-portfolio-project'>
+						Live Site
+					</a>
 				</div>
 			</section>
 		</li>
